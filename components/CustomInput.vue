@@ -23,12 +23,7 @@
         <slot :name="slotName" />
       </template>
     </v-text-field>
-    <img
-      class="copy-icon"
-      src="~/assets/imgs/copy-icon.png"
-      alt="My Image"
-      @click="copyToClipboard"
-    />
+    <button class="copy-icon" @click="copyToClipboard">Copy</button>
   </div>
 </template>
 
