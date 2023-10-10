@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('~assets/fonts/Inter-Regular.ttf');
+}
+@font-face {
+  font-family: 'Inter-Medium';
+  src: url('~assets/fonts/Inter-Medium.ttf');
+}
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url('~assets/fonts/Inter-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('~assets/fonts/Inter-Bold.ttf');
+}
+
+// //color variables
+$primary-color: #00dc82;
+$text-01: #17181f;
+$text-02: #646f82;
+$gray-color: #898989;
+
+body {
+  font-family: 'Inter-Regular';
+  min-height: 100vh;
+  line-height: 1.5;
+  color: $text-01;
+  font-size: 16px;
+  background-image: -moz-linear-gradient(
+    0deg,
+    rgba(153, 0, 255, 0.99),
+    rgba(225, 0, 255, 0.21)
+  );
+
+  background-image: -webkit-linear-gradient(
+    0deg,
+    rgba(153, 0, 255, 0.99),
+    rgba(225, 0, 255, 0.21)
+  );
+
+  background-image: linear-gradient(
+    0deg,
+    rgba(153, 0, 255, 0.99),
+    rgba(225, 0, 255, 0.21)
+  );
+}
+
+fieldset {
+  border: none !important;
+  background-color: #f5f5f5 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.v-input__slot {
+  padding: 8px 12px !important;
+}
+
+.v-text-field__slot input {
+  font-size: 14px;
+  padding-right: 40px;
+  padding-left: 5px;
+}
+
+button.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--x-large {
+  width: 100%;
+  background-color: $primary-color;
+  color: white;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
