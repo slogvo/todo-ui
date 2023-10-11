@@ -25,20 +25,19 @@ export default {}
     align-items: center;
     .item-textbox {
       height: 80px;
-      width: 280px;
+      width: 75%;
       border-radius: 8px;
-      border: 0.5px solid #e7e7e7;
-      background: #fff;
-      padding: 10px 15px;
+      background-color: rgba($primary-color, 0.1);
+      padding: 15px 20px;
       .item-text {
-        font-size: 14px;
+        font-size: 18px;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
         font-family: 'Inter-SemiBold';
-        font-size: 16px;
+        color: $primary-color;
       }
       .item-time {
         font-size: 13px;
@@ -49,6 +48,18 @@ export default {}
       font-size: 15px;
       font-weight: 500;
     }
+  }
+}
+@media screen and (max-width: 478.8px) {
+  .item-text {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 318.8px) {
+  .item-content {
+    flex-direction: column;
+    align-items: start !important;
   }
 }
 </style>

@@ -5,6 +5,7 @@
       v-model="snackbar.show"
       :timeout="snackbar.timeout"
       :color="snackbar.color"
+      top
     >
       {{ snackbar.message }}
     </v-snackbar>
@@ -89,16 +90,22 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
 .copy-icon {
-  width: 25px;
-  height: 25px;
   position: absolute;
-  top: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  top: 50%;
   right: 20px;
-  transform: translateY(50%);
+  transform: translateY(-50%);
+  font-size: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: $gray-color;
   cursor: pointer;
-  transition: all 0.25s linear;
+  transition: all 0.5s ease-in-out;
+  border-radius: 8px;
   &:active {
-    opacity: 0.5;
+    background-color: #ececec;
   }
 }
 </style>

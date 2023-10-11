@@ -28,7 +28,7 @@
         <span class="label-time">Start time</span>
         <div class="content-time">
           <TimePicker></TimePicker>
-          <span>AM</span>
+          <p>AM</p>
         </div>
       </div>
       <p class="line">-</p>
@@ -36,7 +36,7 @@
         <span class="label-time">End time</span>
         <div class="content-time">
           <TimePicker></TimePicker>
-          <span>PM</span>
+          <p>PM</p>
         </div>
       </div>
     </div>
@@ -152,11 +152,6 @@ li {
     flex-direction: row;
     height: 34px;
     cursor: pointer;
-    .month {
-      font-size: 15px;
-      font-family: 'Inter-Regular';
-      transition: all 0.25s linear;
-    }
   }
 
   .month-slide {
@@ -196,7 +191,7 @@ li {
       gap: 7px;
       padding: 10px 5px;
       cursor: pointer;
-      width: 50px;
+      width: 48px;
       .day-num {
         font-family: 'Inter-SemiBold';
         color: $text-01;
@@ -220,12 +215,36 @@ li {
     .content-time {
       display: flex;
       align-items: center;
+      margin-top: 10px;
       gap: 10px;
     }
     .label-time {
       color: $text-02;
-      font-size: 16px;
     }
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 368.8px) {
+  .timer-choose {
+    flex-direction: column;
+    align-items: start !important;
+  }
+
+  .time-start,
+  .time-end {
+    width: 100%;
+  }
+  .day-item {
+    font-size: 12px !important;
+  }
+  .line {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 318.8px) {
+  body {
+    font-size: 12px;
   }
 }
 </style>

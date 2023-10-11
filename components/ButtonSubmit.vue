@@ -1,6 +1,6 @@
 <template>
   <div class="button-area">
-    <v-btn x-large>Create a new task</v-btn>
+    <v-btn x-large> Create a new task</v-btn>
   </div>
 </template>
 
@@ -11,6 +11,6 @@ export default {}
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
 .button-area {
-  margin-top: 40px;
+  display: flex;
 }
 </style>
