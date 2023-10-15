@@ -1,30 +1,18 @@
 <template>
   <div style="position: relative">
     <label>{{ label }}</label>
-    <v-snackbar
-      v-model="snackbar.show"
-      :timeout="snackbar.timeout"
-      :color="snackbar.color"
-      top
-    >
+    <v-snackbar v-model="snackbar.show" :timeout="snackbar.timeout" :color="snackbar.color" top>
       {{ snackbar.message }}
     </v-snackbar>
-    <v-text-field
-      v-bind="{ ...$attrs, ...commonAttrs }"
-      v-model="inputValue"
-      v-on="$listeners"
-    >
-      <template
-        v-for="(_, scopedSlotName) in $scopedSlots"
-        #[scopedSlotName]="slotData"
-      >
+    <v-text-field v-bind="{ ...$attrs, ...commonAttrs }" v-model="inputValue" v-on="$listeners">
+      <template v-for="(_, scopedSlotName) in $scopedSlots" #[scopedSlotName]="slotData">
         <slot :name="scopedSlotName" v-bind="slotData" />
       </template>
       <template v-for="(_, slotName) in $slots" #[slotName]>
         <slot :name="slotName" />
       </template>
     </v-text-field>
-    <button class="copy-icon" @click="copyToClipboard">Copy</button>
+    <v-btn class="copy-icon" :class="{ 'hide-button': disableCopyButton }" @click="copyToClipboard">Copy</v-btn>
   </div>
 </template>
 
@@ -33,15 +21,18 @@ import { Clipboard } from '@capacitor/clipboard'
 
 export default {
   inheritAttrs: false,
+
   props: {
     label: {
       type: String,
       default: '',
     },
   },
+
   data() {
     return {
       inputValue: '',
+      isInputEmpty: true,
       snackbar: {
         show: false, // Ẩn hiển thông báo
         message: '', // Nội dung thông báo
@@ -50,6 +41,7 @@ export default {
       },
     }
   },
+
   computed: {
     commonAttrs() {
       return {
@@ -64,7 +56,17 @@ export default {
         placeholder: 'Enter your task',
       }
     },
+    disableCopyButton() {
+      return this.isInputEmpty || this.inputValue.trim() === '';
+    },
   },
+
+  watch: {
+    inputValue: function (newVal) {
+      this.isInputEmpty = newVal === '';
+    },
+  },
+
   methods: {
     async copyToClipboard() {
       const content = this.inputValue //
@@ -84,11 +86,13 @@ export default {
       this.snackbar.color = 'success' // Màu sắc của thông báo (có thể thay đổi tuỳ theo yêu cầu)
     },
   },
+
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
+
 .copy-icon {
   position: absolute;
   display: inline-flex;
@@ -102,10 +106,18 @@ export default {
   border: 1px solid rgba(0, 0, 0, 0.2);
   color: $gray-color;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
   border-radius: 8px;
+  opacity: 1;
+  visibility: visible;
+
   &:active {
     background-color: #ececec;
   }
+}
+
+.copy-icon.hide-button {
+  opacity: 0;
+  visibility: hidden;
 }
 </style>

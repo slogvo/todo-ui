@@ -2,23 +2,15 @@
   <div class="timer-container">
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div
-          v-for="(month, index) in months"
-          :key="index"
-          class="swiper-slide month-slide"
-        >
+        <div v-for="(month, index) in months" :key="index" class="swiper-slide month-slide">
           <span class="slider-content">{{ month }}</span>
         </div>
       </div>
     </div>
 
     <ul class="dates">
-      <li
-        v-for="(day, index) in days"
-        :key="index"
-        :class="{ 'day-item': true, 'day-isActive': day.isActive }"
-        @click="setActiveDay(index)"
-      >
+      <li v-for="(day, index) in days" :key="index" :class="{ 'day-item': true, 'day-isActive': day.isActive }"
+        @click="setActiveDay(index)">
         <span class="day-name">{{ day.name }}</span>
         <span class="day-num">{{ day.num }}</span>
       </li>
@@ -130,17 +122,20 @@ ul,
 li {
   list-style: none;
 }
+
 .swiper {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 30px;
 }
+
 .swiper-slide {
   align-items: center;
   display: flex;
   justify-content: center;
 }
+
 .timer-container {
   margin-top: 40px;
 
@@ -161,25 +156,30 @@ li {
     width: auto !important;
     cursor: pointer;
   }
+
   .splide__slide {
     width: auto !important;
     padding: 0 15px;
   }
+
   .swiper-slide-active {
     color: $primary-color;
     font-size: 20px;
     font-family: 'Inter-SemiBold';
   }
+
   .dates {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+
     .day-isActive {
       background-color: $primary-color;
       color: #fff !important;
       border-radius: 8px;
     }
+
     .day-item {
       font-size: 14px;
       font-family: 'Inter-Medium';
@@ -192,11 +192,13 @@ li {
       padding: 10px 5px;
       cursor: pointer;
       width: 48px;
+
       .day-num {
         font-family: 'Inter-SemiBold';
         color: $text-01;
       }
     }
+
     .day-isActive .day-num {
       color: #fff !important;
     }
@@ -208,23 +210,26 @@ li {
     justify-content: space-between;
     align-items: center;
     font-family: 'Inter-Medium';
+
     .line {
       color: #c7c7c7;
       margin-top: 30px;
     }
+
     .content-time {
       display: flex;
       align-items: center;
       margin-top: 10px;
       gap: 10px;
     }
+
     .label-time {
       color: $text-02;
     }
   }
 }
 
-@media screen and (min-width: 280px) and (max-width: 368.8px) {
+/*@media screen and (min-width: 280px) and (max-width: 368.8px) {
   .timer-choose {
     flex-direction: column;
     align-items: start !important;
@@ -234,9 +239,11 @@ li {
   .time-end {
     width: 100%;
   }
+
   .day-item {
     font-size: 12px !important;
   }
+
   .line {
     display: none;
   }
@@ -246,5 +253,5 @@ li {
   body {
     font-size: 12px;
   }
-}
+}*/
 </style>

@@ -1,10 +1,5 @@
 <template>
-  <v-app-bar app color="primary">
-    <v-btn icon @click="goBack">
-      <v-icon>mdi-arrow-left</v-icon>
-    </v-btn>
-    <v-toolbar-title class="white--text">{{ title }}</v-toolbar-title>
-  </v-app-bar>
+  <p class="headline">{{ title }}</p>
 </template>
 
 <script>
@@ -16,9 +11,15 @@ export default {
     },
   },
   methods: {
-    goBack() {},
+    goBack() { },
   },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.headline {
+  text-align: center;
+  font-family: 'Inter-SemiBold';
+  font-size: 22px;
+}
+</style>

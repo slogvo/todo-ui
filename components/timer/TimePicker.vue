@@ -1,27 +1,11 @@
 <template>
   <div class="timer-picker">
     <div class="timer-input">
-      <input
-        v-model="hours"
-        type="number"
-        inputmode="numeric"
-        pattern="\d{2}:\d{2}"
-        min="00"
-        max="12"
-        :maxlength="2"
-        @input="updateTime"
-      />
+      <input v-model="hours" type="number" inputmode="numeric" pattern="\d{2}:\d{2}" min="00" max="12" :maxlength="2"
+        @input="updateTime" />
       <span>:</span>
-      <input
-        v-model="minutes"
-        type="number"
-        inputmode="numeric"
-        pattern="\d{2}:\d{2}"
-        min="00"
-        max="59"
-        :maxlength="2"
-        @input="updateTime"
-      />
+      <input v-model="minutes" type="number" inputmode="numeric" pattern="\d{2}:\d{2}" min="00" max="59" :maxlength="2"
+        @input="updateTime" />
     </div>
     <!-- <div class="timer-preview">{{ formattedTime }}</div> -->
   </div>
@@ -66,6 +50,7 @@ export default {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+
     input {
       width: 40px;
       margin: 0 5px;
@@ -76,7 +61,7 @@ export default {
   }
 }
 
-@media screen and (min-width: 280px) and (max-width: 368.8px) {
+/*@media screen and (min-width: 280px) and (max-width: 368.8px) {
   .timer-picker,
   .timer-input {
     width: 100% !important;
@@ -85,5 +70,5 @@ export default {
   .timer-input {
     padding-left: 10px;
   }
-}
+}*/
 </style>

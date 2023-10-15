@@ -1,20 +1,16 @@
 <template>
   <div class="wrapper">
-    <p class="headline">Planning</p>
+    <HeaderView :title="title" />
     <TimerAsset />
     <p class="title">Title</p>
     <CustomInput />
     <div class="line"></div>
-    <div style="margin-bottom: 20px">
+    <div style="margin-bottom: 60px;">
       <ContentShow />
     </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus similique alias et perferendis tempora ratione
-      quisquam. Reprehenderit doloremque placeat enim earum quis maiores excepturi. Provident obcaecati iste amet
-      architecto repellendus.</p>
-    <div style="margin-top: auto">
+    <div :class="[{ 'sticky-footer': $vuetify.breakpoint.md }]">
       <ButtonSubmit />
     </div>
-
   </div>
 </template>
 
@@ -23,6 +19,7 @@ import TimerAsset from '../components/timer/TimerAsset.vue'
 import CustomInput from '../components/CustomInput.vue'
 import ContentShow from '../components/ContentShow.vue'
 import ButtonSubmit from '../components/ButtonSubmit.vue'
+import HeaderView from '../components/HeaderView.vue'
 
 export default {
   components: {
@@ -30,8 +27,14 @@ export default {
     TimerAsset,
     ContentShow,
     ButtonSubmit,
+    HeaderView
   },
   layout: 'default',
+  data() {
+    return {
+      title: 'Planning',
+    }
+  },
 }
 </script>
 
@@ -43,12 +46,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-
-  .headline {
-    text-align: center;
-    font-family: 'Inter-SemiBold';
-    font-size: 22px;
-  }
+  position: relative;
 
   .title {
     font-family: 'Inter-Medium';
@@ -64,25 +62,15 @@ export default {
     margin-top: 20px;
     background-color: #dbdbdb;
   }
-}
 
-@media screen and (min-width: 768px) {
-  .screen {
-    max-width: 430px;
-  }
-}
-
-@media screen and (max-width: 478.8px) {
-  .screen {
-    height: 100vh;
-    margin: auto;
-    border-radius: 0;
-  }
-}
-
-@media screen and (min-width: 430px) {
-  .screen {
-    width: 430px;
+  .sticky-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 15px 25px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 }
 </style>

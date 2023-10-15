@@ -27,6 +27,7 @@ body {
   color: $text-01;
   font-size: 16px;
   min-height: 100vh;
+  overflow-x: hidden;
   background-image: linear-gradient(
     0deg,
     rgba(153, 0, 255, 0.99),
@@ -70,6 +71,10 @@ button.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--x-large {
 
 .v-btn__content {
   letter-spacing: 0;
+  text-transform: capitalize;
+}
+.v-btn--is-elevated {
+  box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -80,7 +85,7 @@ button.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--x-large {
   }
 }
 
-@media screen and (max-width: 411.8px) {
+@media screen and (max-width: 478.8px) {
   body {
     font-size: 14px;
   }

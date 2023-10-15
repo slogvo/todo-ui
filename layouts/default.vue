@@ -1,7 +1,9 @@
 <template>
-  <div :class="['screen', { 'max-screen': $vuetify.breakpoint.lgAndUp }, { 'full-screen': $vuetify.breakpoint.md }]">
+  <v-container
+fluid
+    :class="['screen', { 'screen-lg': $vuetify.breakpoint.lgAndUp }, { 'screen-md ': $vuetify.breakpoint.md }]">
     <Nuxt />
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -20,41 +22,14 @@ export default {}
   box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.15);
 }
 
-.max-screen {
+.screen-lg {
   max-width: 430px;
 }
 
-.full-screen {
-  height: 100%;
+.screen-md {
+  min-height: 100vh;
+  overflow-y: scroll;
   margin: auto;
   border-radius: 0;
 }
-
-.position-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/*
-@media screen and (min-width: 768px) {
-  .screen {
-    max-width: 430px;
-  }
-}
-
-@media screen and (max-width: 478.8px) {
-  .screen {
-    height: 100vh;
-    margin: auto;
-    border-radius: 0;
-  }
-}
-
-@media screen and (min-width: 430px) {
-  .screen {
-    width: 430px;
-  }
-}*/
 </style>
