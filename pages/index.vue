@@ -1,14 +1,15 @@
 <template>
-  <main class="app">
-    <!-- App Content -->
-    <PlanningForm></PlanningForm>
-  </main>
+  <!-- App Content -->
+  <PlanningView></PlanningView>
+  <!-- Others components -->
 </template>
 
 <script>
-import PlanningForm from './PlanningForm.vue'
+import PlanningView from './PlanningView.vue'
 export default {
   name: 'App',
-  components: { PlanningForm },
+  components: { PlanningView },
 }
 </script>
+
+<style></style>

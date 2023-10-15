@@ -27,18 +27,6 @@ body {
   color: $text-01;
   font-size: 16px;
   min-height: 100vh;
-  background-image: -moz-linear-gradient(
-    0deg,
-    rgba(153, 0, 255, 0.99),
-    rgba(225, 0, 255, 0.21)
-  );
-
-  background-image: -webkit-linear-gradient(
-    0deg,
-    rgba(153, 0, 255, 0.99),
-    rgba(225, 0, 255, 0.21)
-  );
-
   background-image: linear-gradient(
     0deg,
     rgba(153, 0, 255, 0.99),

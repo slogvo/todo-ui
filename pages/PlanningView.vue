@@ -1,21 +1,25 @@
 <template>
-  <div class="screen">
-    <p class="screen-headline">Planning</p>
-    <TimerAsset></TimerAsset>
+  <div class="wrapper">
+    <p class="headline">Planning</p>
+    <TimerAsset />
     <p class="title">Title</p>
-    <CustomInput></CustomInput>
+    <CustomInput />
     <div class="line"></div>
     <div style="margin-bottom: 20px">
-      <ContentShow></ContentShow>
+      <ContentShow />
     </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus similique alias et perferendis tempora ratione
+      quisquam. Reprehenderit doloremque placeat enim earum quis maiores excepturi. Provident obcaecati iste amet
+      architecto repellendus.</p>
     <div style="margin-top: auto">
-      <ButtonSubmit></ButtonSubmit>
+      <ButtonSubmit />
     </div>
+
   </div>
 </template>
 
 <script>
-import TimerAsset from '../layouts/TimerAsset.vue'
+import TimerAsset from '../components/timer/TimerAsset.vue'
 import CustomInput from '../components/CustomInput.vue'
 import ContentShow from '../components/ContentShow.vue'
 import ButtonSubmit from '../components/ButtonSubmit.vue'
@@ -27,28 +31,25 @@ export default {
     ContentShow,
     ButtonSubmit,
   },
+  layout: 'default',
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
 
-.screen {
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 35px 25px;
-  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.15);
-  display: flex;
+.wrapper {
   width: 100%;
   height: 100%;
-  margin: 20px auto;
-  transition: width 0.3s ease-in-out;
+  display: flex;
   flex-direction: column;
-  .screen-headline {
+
+  .headline {
     text-align: center;
     font-family: 'Inter-SemiBold';
     font-size: 22px;
   }
+
   .title {
     font-family: 'Inter-Medium';
     margin-top: 20px;
@@ -56,6 +57,7 @@ export default {
     margin-bottom: 10px;
     font-size: 15px;
   }
+
   .line {
     width: 100%;
     height: 1px;

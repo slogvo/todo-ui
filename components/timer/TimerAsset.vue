@@ -46,7 +46,7 @@
 <script>
 import { Swiper, Navigation, Pagination, Autoplay } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
-import TimePicker from '../components/TimePicker.vue'
+import TimePicker from './TimePicker.vue'
 
 export default {
   components: { TimePicker },
