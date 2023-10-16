@@ -23,7 +23,6 @@
           <p>AM</p>
         </div>
       </div>
-      <p class="line">-</p>
       <div class="time-end">
         <span class="label-time">End time</span>
         <div class="content-time">
@@ -246,12 +245,6 @@ li {
 
   .line {
     display: none;
-  }
-}
-
-@media screen and (max-width: 318.8px) {
-  body {
-    font-size: 12px;
   }
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="timer-picker">
     <div class="timer-input">
-      <input v-model="hours" type="number" inputmode="numeric" pattern="\d{2}:\d{2}" min="00" max="12" :maxlength="2"
-        @input="updateTime" />
+      <input v-model="hours" type="number" inputmode="numeric" pattern="\d{2}:\d{2}" min="0" max="12" :maxlength="2"
+        @input="validateTime" />
       <span>:</span>
-      <input v-model="minutes" type="number" inputmode="numeric" pattern="\d{2}:\d{2}" min="00" max="59" :maxlength="2"
-        @input="updateTime" />
+      <input v-model="minutes" type="number" inputmode="numeric" pattern="\d{2}:\d{2}" min="0" max="59" :maxlength="2"
+        @input="validateTime" />
     </div>
     <!-- <div class="timer-preview">{{ formattedTime }}</div> -->
   </div>
@@ -17,25 +17,36 @@ export default {
     return {
       hours: 0,
       minutes: 0,
-    }
+    };
   },
   computed: {
     formattedTime() {
-      const hours = this.padZero(this.hours)
-      const minutes = this.padZero(this.minutes)
-      return `${hours}:${minutes}`
+      const hours = this.padZero(this.hours);
+      const minutes = this.padZero(this.minutes);
+      return `${hours}:${minutes}`;
     },
   },
   methods: {
-    updateTime() {
-      this.$emit('time-updated', this.formattedTime)
+    validateTime() {
+      if (this.hours < 0 || isNaN(this.hours)) {
+        this.hours = 0;
+      } else if (this.hours > 12) {
+        this.hours = 12;
+      }
+
+      if (this.minutes < 0 || isNaN(this.minutes)) {
+        this.minutes = 0;
+      } else if (this.minutes > 59) {
+        this.minutes = 59;
+      }
+
+      this.$emit('time-updated', this.formattedTime);
     },
     padZero(value) {
-      // Thêm vào trước để đủ tối đa 2 ký tự trong chuỗi
-      return value.toString().padStart(2, '0')
+      return value.toString().padStart(2, '0');
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
