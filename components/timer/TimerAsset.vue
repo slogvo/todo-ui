@@ -229,7 +229,7 @@ li {
   }
 }
 
-/*@media screen and (min-width: 280px) and (max-width: 368.8px) {
+@media screen and (min-width: 280px) and (max-width: 368.8px) {
   .timer-choose {
     flex-direction: column;
     align-items: start !important;
@@ -253,5 +253,5 @@ li {
   body {
     font-size: 12px;
   }
-}*/
+}
 </style>

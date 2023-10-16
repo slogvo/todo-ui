@@ -61,14 +61,16 @@ export default {
   }
 }
 
-/*@media screen and (min-width: 280px) and (max-width: 368.8px) {
+@media screen and (min-width: 280px) and (max-width: 368.8px) {
+
   .timer-picker,
   .timer-input {
     width: 100% !important;
     justify-content: start !important;
   }
+
   .timer-input {
     padding-left: 10px;
   }
-}*/
+}
 </style>

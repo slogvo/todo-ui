@@ -95,4 +95,8 @@ button.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--x-large {
   body {
     font-size: 12px;
   }
+  .v-input__slot {
+    height: 54px !important;
+    padding: 5px 8px !important;
+  }
 }

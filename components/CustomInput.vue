@@ -120,4 +120,6 @@ export default {
   opacity: 0;
   visibility: hidden;
 }
+
+@media screen and (max-width: 318.8px) {}
 </style>

@@ -62,10 +62,20 @@ export default {}
   }
 }
 
-/*@media screen and (max-width: 318.8px) {
+@media screen and (max-width: 318.8px) {
   .item-content {
     flex-direction: column;
     align-items: start !important;
   }
-}*/
+
+  .item-textbox {
+    margin-top: 10px;
+    height: 70px !important;
+    width: 100% !important;
+  }
+
+  .item-timer {
+    font-size: 13px !important;
+  }
+}
 </style>
