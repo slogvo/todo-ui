@@ -239,6 +239,10 @@ li {
     width: 100%;
   }
 
+  .time-end {
+    margin-top: 10px;
+  }
+
   .day-item {
     font-size: 12px !important;
   }
