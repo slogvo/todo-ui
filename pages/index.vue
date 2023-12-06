@@ -5,9 +5,12 @@
     <p class="title">Title</p>
     <CopyTextField />
     <div class="line"></div>
-    <div style="margin-bottom: 60px;">
+    <div style="margin-bottom: 60px">
       <BoxContent />
     </div>
+    <v-btn icon @click="openZalo">
+      <v-icon>Zalo</v-icon>
+    </v-btn>
     <div :class="[{ 'sticky-footer': $vuetify.breakpoint.md }]">
       <ButtonArea />
     </div>
@@ -15,26 +18,39 @@
 </template>
 
 <script>
-import TimerContainer from '../components/timer/TimerContainer.vue'
-import CopyTextField from '../components/CopyTextField.vue'
-import BoxContent from '../components/BoxContent.vue'
-import ButtonArea from '../components/ButtonArea.vue'
-import HeaderView from '../components/HeaderView.vue'
+import { Capacitor } from '@capacitor/core'
+import HeaderView from '~/components/HeaderView.vue'
+import TimerContainer from '~/components/timer/TimerContainer.vue'
+import CopyTextField from '~/components/CopyTextField.vue'
+import BoxContent from '~/components/BoxContent.vue'
+import ButtonArea from '~/components/ButtonArea.vue'
 
 export default {
   name: 'App',
   components: {
-    CopyTextField,
+    HeaderView,
     TimerContainer,
+    CopyTextField,
     BoxContent,
     ButtonArea,
-    HeaderView
   },
   layout: 'default',
   data() {
     return {
       title: 'Planning',
+      phoneNumber: '0522464846',
     }
+  },
+  methods: {
+    openZalo() {
+      const zaloUrl = `https://zalo.me/${this.phoneNumber}`
+      if (this.$config.isNative) {
+        const { Browser } = Capacitor.Plugins
+        Browser.open({ url: zaloUrl })
+      } else {
+        window.open(zaloUrl, '_blank')
+      }
+    },
   },
 }
 </script>
@@ -75,6 +91,3 @@ export default {
   }
 }
 </style>
-
-
-
