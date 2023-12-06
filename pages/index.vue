@@ -2,15 +2,15 @@
   <div class="wrapper">
     <HeaderView :title="title" />
     <TimerContainer />
+    <v-btn icon @click="openZalo">
+      <v-icon>Zalo</v-icon>
+    </v-btn>
     <p class="title">Title</p>
     <CopyTextField />
     <div class="line"></div>
     <div style="margin-bottom: 60px">
       <BoxContent />
     </div>
-    <v-btn icon @click="openZalo">
-      <v-icon>Zalo</v-icon>
-    </v-btn>
     <div :class="[{ 'sticky-footer': $vuetify.breakpoint.md }]">
       <ButtonArea />
     </div>
